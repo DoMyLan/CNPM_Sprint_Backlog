@@ -1,0 +1,122 @@
+﻿@model QuanLyDeTai.Models.Teacher
+@{
+    
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<div class="col-md-9">
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index">Home</a></li>
+
+    </ol>
+    <div class="well-sm">
+        <span>
+            <span id="random_tin">
+                <i class="fa-thin fa-megaphone"></i>
+                <small>
+                    <a href="/Home/TinTuGiaoVu?id=9">
+
+                        Th&#244;ng b&#225;o đăng k&#253; chuy&#234;n ng&#224;nh kh&#243;a 2018
+                        <small style="color: rgb(87,87,87);">(30/11/2020 10:15:04)</small>
+                    </a>
+                </small>
+
+
+
+            </span>
+            <span id="time_bar">
+
+                <span id="time" class="label label-primary pull-right">
+                    <i class="icon-time"></i> 0
+                    giờ 23 phút, ngày 30 tháng 11, 2022
+                </span><br>
+            </span>
+        </span>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="spad">
+            <div style="color: rgb(7, 132, 163);" class="panel-heading">
+                <h4 style="font-family: verdana;color:rgb(87,87,87);">Thông tin giảng viên</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card mb-3 user-profile">
+                        <div class="card-body info-panel">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Họ & tên</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">@Model.teacherName</div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">@Model.email</div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Số điện thoại</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    @Model.phone
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Giới tính</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    @Model.gender
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Địa chỉ</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    @Model.birth
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Chuyên ngành</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    @Model.Major.majorName
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Bằng cấp</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    @Model.degree
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <a class="btn btn-info" target="" href="edit_profile.html">Sửa thông tin</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
