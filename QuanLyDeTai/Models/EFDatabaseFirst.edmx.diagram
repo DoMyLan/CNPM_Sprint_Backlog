@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="360152e6762f439e94595c2ce05b784c" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Administrator" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.ExaminationBoard" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Group" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Major" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Report" Width="1.5" PointX="11.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.SignUp" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Student" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Teacher_ExaminationBoard" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Teacher" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyDeTaiModel.Topic" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Admin_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Admin_signUp_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.ExaminationBoard_Teacher_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Report_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Report_Group_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Student_Group_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Student_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Teacher_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Topic_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Topic_signUp_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Teacher_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyDeTaiModel.Teacher_Topic_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

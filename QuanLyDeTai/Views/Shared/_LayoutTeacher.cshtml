@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css/style.css")
+    @Styles.Render("~/fonts/fontawesome/css/all.min.css")
+    <style>
+        body{
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="navigation">
+        <div id="banner-desktop">
+            <div class="container">
+                <div id="banner">
+                    <div id="login-area">
+                        <a data-toggle="modal" href="#dang_nhap"><img src="~/Content/images/Login-icon.png" width="24" height="24" /> Đăng nhập</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper">
+
+            <div class="container">
+
+                <div class="row">
+                    <div id="left-content">
+                        <div class="col-md-3">
+                            <!-- Menu desktop -->
+                            <div id="desktop-menu">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 id="mobile_home">Danh Mục</h4>
+                                    </div>
+
+                                    <a href="/Home/Index" class="list-group-item">
+                                        <img src="~/Content/images/house-icon.png" width="24" height="24" /><span class="pull-right"><i class="icon-chevron-right"></i></span> Trang Chủ
+                                    </a>
+                                    <a href="/Home/LoaiDeTai" class="list-group-item ">
+                                        <img src="~/Content/images/Actions-view-calendar-list-icon.png" width="24"
+                                             height="24" /><span class="pull-right">
+                                            <i class="icon-chevron-right"></i>
+                                        </span> Danh sách đề tài
+                                    </a>
+                                    <a href="/Home/ThongTinGiangVien" class="list-group-item ">
+                                        <img src="~/Content/images/Teacher-icon.png" width="24" height="24" /><span class="pull-right"><i class="icon-chevron-right"></i></span> Thông tin giảng
+                                        viên
+                                    </a>
+                                    <a href="/Home/ThongTinSinhVien" class="list-group-item ">
+                                        <img src="~/Content/images/Student-3-icon.png" width="24"
+                                             height="24" /><span class="pull-right">
+                                            <i class="icon-chevron-right"></i>
+                                        </span> Thông tin sinh viên
+                                    </a>
+                                    <a href="/Home/HuongDanDangKy" class="list-group-item ">
+                                        <img src="~/Content/images/Actions-help-contents-icon.png" width="24"
+                                             height="24" /><span class="pull-right">
+                                            <i class="icon-chevron-right"></i>
+                                        </span> Hướng dẫn đăng ký
+                                    </a>
+                                    <a href="/Home/ThongKe" class="list-group-item ">
+                                        <img src="~/Content/images/chart-icon.png" width="24" height="24" /><span class="pull-right"><i class="icon-chevron-right"></i></span> Thống kê
+                                    </a>
+                                    <a data-toggle="modal" href="#seach_box" class="list-group-item">
+                                        <img src="~/Content/images/Search-icon.png" width="24" height="24" /><span class="pull-right"><i class="icon-chevron-right"></i></span> Tìm kiếm
+                                    </a>
+                                </div><!-- /panel-default -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div id="footer">
+                <hr />
+                <h5 class="text-center text-danger">Khoa Công nghệ Thông tin - Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh</h5>
+                <h5 class="text-center text-danger">Số 1, Võ Văn Ngân, Thủ Đức, TP. Hồ Chí Minh</h5>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
