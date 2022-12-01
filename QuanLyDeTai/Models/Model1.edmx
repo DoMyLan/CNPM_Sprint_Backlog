@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DKDT_CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="adminId" />
@@ -32,6 +32,13 @@
           </Key>
           <Property Name="groupId" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="groupName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Majors">
           <Key>
@@ -253,10 +260,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
+        <EntityContainer Name="DKDT_CNPMModelStoreContainer">
           <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoards" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Majors" EntityType="Self.Majors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignUp" EntityType="Self.SignUp" Schema="dbo" store:Type="Tables" />
@@ -317,7 +325,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuanLyDeTaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DKDT_CNPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Administrator">
           <Key>
             <PropertyRef Name="adminId" />
@@ -352,6 +360,13 @@
           <Property Name="groupName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Reports" Relationship="Self.Report_Group_FK" FromRole="Groups" ToRole="Report" />
           <NavigationProperty Name="Students" Relationship="Self.Student_Group_FK" FromRole="Groups" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Major">
           <Key>
@@ -594,6 +609,7 @@
           <EntitySet Name="Administrators" EntityType="Self.Administrator" />
           <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoard" />
           <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
           <EntitySet Name="Majors" EntityType="Self.Major" />
           <EntitySet Name="Reports" EntityType="Self.Report" />
           <EntitySet Name="SignUps" EntityType="Self.SignUp" />
@@ -655,9 +671,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLyDeTaiModelStoreContainer" CdmEntityContainer="QuanLyDeTaiEntities">
+        <EntityContainerMapping StorageEntityContainer="DKDT_CNPMModelStoreContainer" CdmEntityContainer="QuanLyDeTaiEntities">
           <EntitySetMapping Name="Administrators">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Administrator">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Administrator">
               <MappingFragment StoreEntitySet="Administrators">
                 <ScalarProperty Name="adminId" ColumnName="adminId" />
                 <ScalarProperty Name="adminName" ColumnName="adminName" />
@@ -672,7 +688,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ExaminationBoards">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.ExaminationBoard">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.ExaminationBoard">
               <MappingFragment StoreEntitySet="ExaminationBoards">
                 <ScalarProperty Name="examinationBoardId" ColumnName="examinationBoardId" />
                 <ScalarProperty Name="examinationBoardName" ColumnName="examinationBoardName" />
@@ -680,15 +696,23 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Groups">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Group">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Group">
               <MappingFragment StoreEntitySet="Groups">
                 <ScalarProperty Name="groupId" ColumnName="groupId" />
                 <ScalarProperty Name="groupName" ColumnName="groupName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LOGINs">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Majors">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Major">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Major">
               <MappingFragment StoreEntitySet="Majors">
                 <ScalarProperty Name="majorId" ColumnName="majorId" />
                 <ScalarProperty Name="majorName" ColumnName="majorName" />
@@ -696,7 +720,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reports">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Report">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Report">
               <MappingFragment StoreEntitySet="Report">
                 <ScalarProperty Name="reportId" ColumnName="reportId" />
                 <ScalarProperty Name="review" ColumnName="review" />
@@ -707,7 +731,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SignUps">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.SignUp">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.SignUp">
               <MappingFragment StoreEntitySet="SignUp">
                 <ScalarProperty Name="signUpId" ColumnName="signUpId" />
                 <ScalarProperty Name="startTime" ColumnName="startTime" />
@@ -717,7 +741,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Student">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Student">
               <MappingFragment StoreEntitySet="Students">
                 <ScalarProperty Name="studentId" ColumnName="studentId" />
                 <ScalarProperty Name="studentName" ColumnName="studentName" />
@@ -733,7 +757,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teacher_ExaminationBoard">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Teacher_ExaminationBoard">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Teacher_ExaminationBoard">
               <MappingFragment StoreEntitySet="Teacher_ExaminationBoard">
                 <ScalarProperty Name="C_id" ColumnName="_id" />
                 <ScalarProperty Name="teacherId" ColumnName="teacherId" />
@@ -742,7 +766,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Teacher">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
                 <ScalarProperty Name="teacherId" ColumnName="teacherId" />
                 <ScalarProperty Name="teacherName" ColumnName="teacherName" />
@@ -758,7 +782,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Topics">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Topic">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.Topic">
               <MappingFragment StoreEntitySet="Topics">
                 <ScalarProperty Name="topicId" ColumnName="topicId" />
                 <ScalarProperty Name="topicName" ColumnName="topicName" />

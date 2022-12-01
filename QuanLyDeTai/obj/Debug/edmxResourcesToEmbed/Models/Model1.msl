@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DKDT_CNPMModelStoreContainer" CdmEntityContainer="QuanLyDeTaiEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrators">
+          <ScalarProperty Name="adminId" ColumnName="adminId" />
+          <ScalarProperty Name="adminName" ColumnName="adminName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birth" ColumnName="birth" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="signUpId" ColumnName="signUpId" />
+          <ScalarProperty Name="examinationBoardId" ColumnName="examinationBoardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExaminationBoards">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.ExaminationBoard">
+        <MappingFragment StoreEntitySet="ExaminationBoards">
+          <ScalarProperty Name="examinationBoardId" ColumnName="examinationBoardId" />
+          <ScalarProperty Name="examinationBoardName" ColumnName="examinationBoardName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGINs">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.LOGIN">
+        <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Major">
+        <MappingFragment StoreEntitySet="Majors">
+          <ScalarProperty Name="majorId" ColumnName="majorId" />
+          <ScalarProperty Name="majorName" ColumnName="majorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="reportId" ColumnName="reportId" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="examinationBoardId" ColumnName="examinationBoardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignUps">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.SignUp">
+        <MappingFragment StoreEntitySet="SignUp">
+          <ScalarProperty Name="signUpId" ColumnName="signUpId" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="studentId" ColumnName="studentId" />
+          <ScalarProperty Name="studentName" ColumnName="studentName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birth" ColumnName="birth" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="lead" ColumnName="lead" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="majorId" ColumnName="majorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher_ExaminationBoard">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Teacher_ExaminationBoard">
+        <MappingFragment StoreEntitySet="Teacher_ExaminationBoard">
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="examinationBoardId" ColumnName="examinationBoardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="teacherName" ColumnName="teacherName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birth" ColumnName="birth" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="lead" ColumnName="lead" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="majorId" ColumnName="majorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.Topic">
+        <MappingFragment StoreEntitySet="Topics">
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+          <ScalarProperty Name="topicName" ColumnName="topicName" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="signUpId" ColumnName="signUpId" />
+          <ScalarProperty Name="majorId" ColumnName="majorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

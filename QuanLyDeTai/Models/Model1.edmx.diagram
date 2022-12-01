@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d788d72f4ab546afab4679cc5a4a8b31" Name="Diagram1">
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Administrator" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.ExaminationBoard" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Group" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.LOGIN" Width="1.5" PointX="8.875" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Major" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Report" Width="1.5" PointX="11.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.SignUp" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Student" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Teacher_ExaminationBoard" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Teacher" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.Topic" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="DKDT_CNPMModel.Admin_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Admin_signUp_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.ExaminationBoard_Teacher_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Report_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Report_Group_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Student_Group_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Student_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Teacher_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Topic_Major_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Topic_signUp_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Teacher_ExaminationBoard_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DKDT_CNPMModel.Teacher_Topic_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
