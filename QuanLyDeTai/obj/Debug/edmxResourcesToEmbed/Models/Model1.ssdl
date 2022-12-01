@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DKDT_CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="adminId" />
+    </Key>
+    <Property Name="adminId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="adminName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="gender" Type="bit" Nullable="false" />
+    <Property Name="birth" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="degree" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="signUpId" Type="varchar" MaxLength="20" />
+    <Property Name="examinationBoardId" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ExaminationBoards">
+    <Key>
+      <PropertyRef Name="examinationBoardId" />
+    </Key>
+    <Property Name="examinationBoardId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="examinationBoardName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="groupName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Majors">
+    <Key>
+      <PropertyRef Name="majorId" />
+    </Key>
+    <Property Name="majorId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="majorName" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="reportId" />
+    </Key>
+    <Property Name="reportId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="review" Type="nvarchar" MaxLength="500" />
+    <Property Name="result" Type="float" Nullable="false" />
+    <Property Name="groupId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="examinationBoardId" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SignUp">
+    <Key>
+      <PropertyRef Name="signUpId" />
+    </Key>
+    <Property Name="signUpId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="startTime" Type="datetime" Nullable="false" />
+    <Property Name="endTime" Type="datetime" Nullable="false" />
+    <Property Name="subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="studentId" />
+    </Key>
+    <Property Name="studentId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="studentName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="gender" Type="bit" Nullable="false" />
+    <Property Name="birth" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="510" Nullable="false" />
+    <Property Name="lead" Type="bit" Nullable="false" />
+    <Property Name="groupId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="majorId" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teacher_ExaminationBoard">
+    <Key>
+      <PropertyRef Name="_id" />
+      <PropertyRef Name="teacherId" />
+      <PropertyRef Name="examinationBoardId" />
+    </Key>
+    <Property Name="_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="teacherId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="examinationBoardId" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teachers">
+    <Key>
+      <PropertyRef Name="teacherId" />
+    </Key>
+    <Property Name="teacherId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="teacherName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="gender" Type="bit" Nullable="false" />
+    <Property Name="birth" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="lead" Type="bit" Nullable="false" />
+    <Property Name="degree" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="topicId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="majorId" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Topics">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topicId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="topicName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="detail" Type="nvarchar" MaxLength="500" />
+    <Property Name="signUpId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="majorId" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="Admin_ExaminationBoard_FK">
+    <End Role="ExaminationBoards" Type="Self.ExaminationBoards" Multiplicity="0..1" />
+    <End Role="Administrators" Type="Self.Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExaminationBoards">
+        <PropertyRef Name="examinationBoardId" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="examinationBoardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Admin_signUp_FK">
+    <End Role="SignUp" Type="Self.SignUp" Multiplicity="0..1" />
+    <End Role="Administrators" Type="Self.Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SignUp">
+        <PropertyRef Name="signUpId" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="signUpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExaminationBoard_Teacher_FK">
+    <End Role="ExaminationBoards" Type="Self.ExaminationBoards" Multiplicity="1" />
+    <End Role="Teacher_ExaminationBoard" Type="Self.Teacher_ExaminationBoard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExaminationBoards">
+        <PropertyRef Name="examinationBoardId" />
+      </Principal>
+      <Dependent Role="Teacher_ExaminationBoard">
+        <PropertyRef Name="examinationBoardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Report_ExaminationBoard_FK">
+    <End Role="ExaminationBoards" Type="Self.ExaminationBoards" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExaminationBoards">
+        <PropertyRef Name="examinationBoardId" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="examinationBoardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Report_Group_FK">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Student_Group_FK">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Student_Major_FK">
+    <End Role="Majors" Type="Self.Majors" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="majorId" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="majorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Teacher_ExaminationBoard_FK">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+    <End Role="Teacher_ExaminationBoard" Type="Self.Teacher_ExaminationBoard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="teacherId" />
+      </Principal>
+      <Dependent Role="Teacher_ExaminationBoard">
+        <PropertyRef Name="teacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Teacher_Major_FK">
+    <End Role="Majors" Type="Self.Majors" Multiplicity="1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="majorId" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="majorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Teacher_Topic_FK">
+    <End Role="Topics" Type="Self.Topics" Multiplicity="1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topics">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Topic_Major_FK">
+    <End Role="Majors" Type="Self.Majors" Multiplicity="1" />
+    <End Role="Topics" Type="Self.Topics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="majorId" />
+      </Principal>
+      <Dependent Role="Topics">
+        <PropertyRef Name="majorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Topic_signUp_FK">
+    <End Role="SignUp" Type="Self.SignUp" Multiplicity="1" />
+    <End Role="Topics" Type="Self.Topics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SignUp">
+        <PropertyRef Name="signUpId" />
+      </Principal>
+      <Dependent Role="Topics">
+        <PropertyRef Name="signUpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DKDT_CNPMModelStoreContainer">
+    <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Majors" EntityType="Self.Majors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SignUp" EntityType="Self.SignUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher_ExaminationBoard" EntityType="Self.Teacher_ExaminationBoard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Admin_ExaminationBoard_FK" Association="Self.Admin_ExaminationBoard_FK">
+      <End Role="ExaminationBoards" EntitySet="ExaminationBoards" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="Admin_signUp_FK" Association="Self.Admin_signUp_FK">
+      <End Role="SignUp" EntitySet="SignUp" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="ExaminationBoard_Teacher_FK" Association="Self.ExaminationBoard_Teacher_FK">
+      <End Role="ExaminationBoards" EntitySet="ExaminationBoards" />
+      <End Role="Teacher_ExaminationBoard" EntitySet="Teacher_ExaminationBoard" />
+    </AssociationSet>
+    <AssociationSet Name="Report_ExaminationBoard_FK" Association="Self.Report_ExaminationBoard_FK">
+      <End Role="ExaminationBoards" EntitySet="ExaminationBoards" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="Report_Group_FK" Association="Self.Report_Group_FK">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="Student_Group_FK" Association="Self.Student_Group_FK">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="Student_Major_FK" Association="Self.Student_Major_FK">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="Teacher_ExaminationBoard_FK" Association="Self.Teacher_ExaminationBoard_FK">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Teacher_ExaminationBoard" EntitySet="Teacher_ExaminationBoard" />
+    </AssociationSet>
+    <AssociationSet Name="Teacher_Major_FK" Association="Self.Teacher_Major_FK">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="Teacher_Topic_FK" Association="Self.Teacher_Topic_FK">
+      <End Role="Topics" EntitySet="Topics" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="Topic_Major_FK" Association="Self.Topic_Major_FK">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="Topics" EntitySet="Topics" />
+    </AssociationSet>
+    <AssociationSet Name="Topic_signUp_FK" Association="Self.Topic_signUp_FK">
+      <End Role="SignUp" EntitySet="SignUp" />
+      <End Role="Topics" EntitySet="Topics" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

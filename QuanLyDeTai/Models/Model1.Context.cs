@@ -28,6 +28,7 @@ namespace QuanLyDeTai.Models
         public virtual DbSet<Administrator> Administrators { get; set; }
         public virtual DbSet<ExaminationBoard> ExaminationBoards { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<Major> Majors { get; set; }
         public virtual DbSet<Report> Reports { get; set; }
         public virtual DbSet<SignUp> SignUps { get; set; }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Administrator\source\repos\QuanLyDeTai\QuanLyDeTai\Models\EFDatabaseFirst.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\HK1_NAM3\CongNghePhanMem\Git_CNPM\CNPM_Sprint_Backlog\QuanLyDeTai\Models\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
