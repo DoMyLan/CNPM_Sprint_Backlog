@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DKDT_CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DKDT_CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="adminId" />
@@ -33,12 +33,13 @@
           <Property Name="groupId" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="groupName" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityType Name="LOGIN">
+        <EntityType Name="login">
           <Key>
             <PropertyRef Name="username" />
           </Key>
-          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Majors">
           <Key>
@@ -264,7 +265,7 @@
           <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoards" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Majors" EntityType="Self.Majors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignUp" EntityType="Self.SignUp" Schema="dbo" store:Type="Tables" />
@@ -321,8 +322,7 @@
             <End Role="Topics" EntitySet="Topics" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DKDT_CNPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -360,13 +360,6 @@
           <Property Name="groupName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Reports" Relationship="Self.Report_Group_FK" FromRole="Groups" ToRole="Report" />
           <NavigationProperty Name="Students" Relationship="Self.Student_Group_FK" FromRole="Groups" ToRole="Students" />
-        </EntityType>
-        <EntityType Name="LOGIN">
-          <Key>
-            <PropertyRef Name="username" />
-          </Key>
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Major">
           <Key>
@@ -609,7 +602,6 @@
           <EntitySet Name="Administrators" EntityType="Self.Administrator" />
           <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoard" />
           <EntitySet Name="Groups" EntityType="Self.Group" />
-          <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
           <EntitySet Name="Majors" EntityType="Self.Major" />
           <EntitySet Name="Reports" EntityType="Self.Report" />
           <EntitySet Name="SignUps" EntityType="Self.SignUp" />
@@ -665,7 +657,16 @@
             <End Role="Topics" EntitySet="Topics" />
             <End Role="Teachers" EntitySet="Teachers" />
           </AssociationSet>
+          <EntitySet Name="logins" EntityType="DKDT_CNPMModel.login" />
         </EntityContainer>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -700,14 +701,6 @@
               <MappingFragment StoreEntitySet="Groups">
                 <ScalarProperty Name="groupId" ColumnName="groupId" />
                 <ScalarProperty Name="groupName" ColumnName="groupName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LOGINs">
-            <EntityTypeMapping TypeName="DKDT_CNPMModel.LOGIN">
-              <MappingFragment StoreEntitySet="LOGIN">
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -789,6 +782,15 @@
                 <ScalarProperty Name="detail" ColumnName="detail" />
                 <ScalarProperty Name="signUpId" ColumnName="signUpId" />
                 <ScalarProperty Name="majorId" ColumnName="majorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="DKDT_CNPMModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

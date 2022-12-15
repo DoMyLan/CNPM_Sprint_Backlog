@@ -32,14 +32,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LOGINs">
-      <EntityTypeMapping TypeName="DKDT_CNPMModel.LOGIN">
-        <MappingFragment StoreEntitySet="LOGIN">
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Majors">
       <EntityTypeMapping TypeName="DKDT_CNPMModel.Major">
         <MappingFragment StoreEntitySet="Majors">
@@ -118,6 +110,15 @@
           <ScalarProperty Name="detail" ColumnName="detail" />
           <ScalarProperty Name="signUpId" ColumnName="signUpId" />
           <ScalarProperty Name="majorId" ColumnName="majorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="DKDT_CNPMModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

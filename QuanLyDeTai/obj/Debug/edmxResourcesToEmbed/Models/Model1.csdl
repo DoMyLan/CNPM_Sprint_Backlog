@@ -35,13 +35,6 @@
     <NavigationProperty Name="Reports" Relationship="Self.Report_Group_FK" FromRole="Groups" ToRole="Report" />
     <NavigationProperty Name="Students" Relationship="Self.Student_Group_FK" FromRole="Groups" ToRole="Students" />
   </EntityType>
-  <EntityType Name="LOGIN">
-    <Key>
-      <PropertyRef Name="username" />
-    </Key>
-    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="Major">
     <Key>
       <PropertyRef Name="majorId" />
@@ -283,7 +276,6 @@
     <EntitySet Name="Administrators" EntityType="Self.Administrator" />
     <EntitySet Name="ExaminationBoards" EntityType="Self.ExaminationBoard" />
     <EntitySet Name="Groups" EntityType="Self.Group" />
-    <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
     <EntitySet Name="Majors" EntityType="Self.Major" />
     <EntitySet Name="Reports" EntityType="Self.Report" />
     <EntitySet Name="SignUps" EntityType="Self.SignUp" />
@@ -339,5 +331,14 @@
       <End Role="Topics" EntitySet="Topics" />
       <End Role="Teachers" EntitySet="Teachers" />
     </AssociationSet>
+    <EntitySet Name="logins" EntityType="DKDT_CNPMModel.login" />
   </EntityContainer>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

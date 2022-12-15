@@ -7,19 +7,18 @@ namespace QuanLyDeTai.Models
 {
     public class mapTaiKhoan
     {
-        public LOGIN ChiTiet(string TenDangNhap)
+        public login ChiTiet(string tenDangNhap)
         {
             try
             {
                 QuanLyDeTaiEntities db = new QuanLyDeTaiEntities();
-                var model = db.LOGINs.SingleOrDefault(m => m.username == TenDangNhap.ToLower());
+                var model = db.logins.SingleOrDefault(m => m.username == tenDangNhap.ToLower());
                 return model;
             }
             catch
             {
                 return null;
             }
-
         }
     }
 }

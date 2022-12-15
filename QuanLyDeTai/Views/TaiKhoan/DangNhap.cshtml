@@ -2,34 +2,62 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>TaiKhoan</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dangnhap</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/css/ForgotPass.css">
 </head>
+
 <body>
-    <div>
-        <form method="post">
-            <div>
-                <p>Tên đăng nhập</p>
-                <input type="text" name="TenDangNhap" />
-            </div>
-            <div>
-                <p>Mật Khẩu</p>
-                <input type="password" name="MatKhau" />
-            </div>
-            <div>
-                <p>
-                    <button type="submit"></button>
-                </p>
-                <p style="color:red">
-                    @ViewBag.thongbao
-                </p>
-            </div>
-        </form>
-    </div>
+    <main id="container" style="top:14pc;">
+        <h2>Đăng Nhập</h1>
+            <form action="">
+                <div class="radio" style="position: absolute; left: 0%; right: 80.73%; top: 20%; bottom: 0%;">
+                    <input id="radio-1" name="radio" type="radio" checked>
+                    <label for="radio-1" class="radio-label">Sinh viên</label>
+                </div>
+                <div class="radio" style="position: absolute; left: 24.2%; right: 53.96%; top: 20%; bottom: 0%;">
+                    <input id="radio-2" name="radio" type="radio">
+                    <label for="radio-2" class="radio-label">Giảng viên</label>
+                </div>
+
+                <div class="radio" style="position: absolute; left: 50.96%; right: 19.7%; top: 20%; bottom: 0%;">
+                    <input id="radio-3" name="radio" type="radio">
+                    <label for="radio-3" class="radio-label">Trưởng bộ môn</label>
+                </div>
+                <div class="radio" style="position: absolute; left: 85.22%; right: 0%; top: 20%; bottom: 0%;">
+                    <input id="radio-4" name="radio" type="radio">
+                    <label for="radio-4" class="radio-label">Admin</label>
+                </div>
+            </form>
+            <form action="" method="post">
+                <div class="input-box">
+                    <h1 id="new1"></h1>
+                    <input type="text" placeholder="Tên đăng nhập" class="box1" style="margin-top: 4pc;">
+                </div>
+
+                <div class="input-box">
+                    <h1 id="new2"></h1>
+                    <input type="text" placeholder="Mật khẩu" class="box2" style="margin-top: 4pc;">
+                </div>
+
+
+                <div class="btn-box">
+                    <button type="submit" class="btnSubmit">
+                        Đăng Nhập
+                    </button>
+                    <p style="color: red; color: red; position: absolute; left: 27px; top: 420px;">
+                        @ViewBag.thongbao
+                    </p>
+                </div>
+            </form>
+    </main>
 </body>
+
 </html>

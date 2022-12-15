@@ -140,8 +140,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TaiKhoanController.cs" />
+    <Compile Include="Controllers\Login\TaiKhoanController.cs" />
     <Compile Include="Controllers\Teacher\QuanLyThongTinGiaoVienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,7 +156,7 @@
     <Compile Include="Models\Group.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LOGIN.cs">
+    <Compile Include="Models\login.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Major.cs">
@@ -206,7 +207,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\css.css" />
+    <Content Include="Content\css\ForgotPass.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\Actions-help-contents-icon.png" />
@@ -2382,10 +2384,10 @@
     <Content Include="Views\QuanLyThongTinGiaoVien\Index.cshtml" />
     <Content Include="Views\QuanLyThongTinGiaoVien\Update.cshtml" />
     <Content Include="Views\TaiKhoan\DangNhap.cshtml" />
+    <Content Include="Views\HomeAdmin\homeadmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\aaaa\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="DKDT_CNPMModel.Administrator" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DKDT_CNPMModel.ExaminationBoard" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DKDT_CNPMModel.Group" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DKDT_CNPMModel.LOGIN" Width="1.5" PointX="8.875" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DKDT_CNPMModel.Major" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DKDT_CNPMModel.Report" Width="1.5" PointX="11.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DKDT_CNPMModel.SignUp" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
@@ -28,6 +27,7 @@
         <AssociationConnector Association="DKDT_CNPMModel.Topic_signUp_FK" ManuallyRouted="false" />
         <AssociationConnector Association="DKDT_CNPMModel.Teacher_ExaminationBoard_FK" ManuallyRouted="false" />
         <AssociationConnector Association="DKDT_CNPMModel.Teacher_Topic_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DKDT_CNPMModel.login" Width="1.5" PointX="5.25" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

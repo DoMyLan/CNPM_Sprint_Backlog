@@ -28,7 +28,6 @@ namespace QuanLyDeTai.Models
         public virtual DbSet<Administrator> Administrators { get; set; }
         public virtual DbSet<ExaminationBoard> ExaminationBoards { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<Major> Majors { get; set; }
         public virtual DbSet<Report> Reports { get; set; }
         public virtual DbSet<SignUp> SignUps { get; set; }
@@ -36,5 +35,6 @@ namespace QuanLyDeTai.Models
         public virtual DbSet<Teacher_ExaminationBoard> Teacher_ExaminationBoard { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<login> logins { get; set; }
     }
 }

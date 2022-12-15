@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "homeadmin";
+    Layout = "~/Views/Home/Index.cshtml";
+    var user =(QuanLyDeTai.Models.login)System.Web.HttpContext.Current.Session["user"];
+}
+
+<h2>@user.username</h2>
+
