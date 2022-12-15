@@ -67,22 +67,28 @@ public class MajorsDaoImpl extends DBConnection implements IMajorsDao{
 
 	@Override
 	public MajorsModel get(int id) {
+
 		String sql = "SELECT * FROM majors WHERE majorId = ? ";
 		MajorsModel major = null;
+
 		try {
 			Connection con = super.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+
 				int majorId = rs.getInt("majorId");
 			    String majorName  = rs.getString("majorName");
 				major = new MajorsModel(majorId,majorName);
+				return major;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return major;
+
 	}
 
 	@Override
@@ -96,13 +102,8 @@ public class MajorsDaoImpl extends DBConnection implements IMajorsDao{
 			while (rs.next()) {
 				MajorsModel major = new MajorsModel();
 				
-//				majorser.setmajorsId(rs.getInt("majorsId"));
-//				majorser.setmajorsName(rs.getString(id));
-//				majorser.setmajorsId(rs.getInt("majorsId"));
-//				majorser.setBoolean(3, signup.getBoolean());
-//				majorser.setCreatedAt(rs.getDate("createdAt"));
-//				majorser.setPrice(rs.getBigDecimal("price"));
-				
+				major.setMajorId(rs.getInt("majorsId"));
+				major.setMajorName(rs.getString("majorName"));
 				majors.add(major);
 			}
 		} catch (Exception e) {

@@ -51,7 +51,11 @@ public class TopicDetailController extends HttpServlet{
 		//tìm topicdetail theo topicId và leader
 		List<TopicDetailsModel> topicdetails = new ArrayList<TopicDetailsModel>();
 		topicdetails = topicDetailsDao.findTopicDetailByTopicId(Integer.parseInt(topicId));
-		req.setAttribute("topicdetail", topicdetails.get(0));
+		if(!topicdetails.isEmpty())
+		{
+			req.setAttribute("topicdetail", topicdetails.get(0));
+		}
+		
 		List<StudentsModel> students = new ArrayList<StudentsModel>();
 		
 		for (TopicDetailsModel topicDetail : topicdetails) {

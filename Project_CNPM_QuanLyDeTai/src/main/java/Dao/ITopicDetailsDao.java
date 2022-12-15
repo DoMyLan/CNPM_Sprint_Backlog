@@ -21,5 +21,11 @@ public interface ITopicDetailsDao {
 	List<TopicDetailsModel> findTopicDetailByTopicId(int topicId);
 
 	String findMajorNameByTopicDetail(int topicId);
+	
+	List<TopicDetailsModel> getAllByTopicId(int topicId);
+
+	void insertMenber(TopicDetailsModel topicdetail);
+
+	void insertLeader(TopicDetailsModel topicdetail);
 
 }

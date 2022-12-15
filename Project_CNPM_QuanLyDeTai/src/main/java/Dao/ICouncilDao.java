@@ -17,5 +17,7 @@ public interface ICouncilDao {
 	List<CouncilModel> getAll();
 
 	CouncilModel findById(int id);
+	
+	CouncilModel getById(int id);
 
 }

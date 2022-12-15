@@ -10,6 +10,7 @@ public class TopicDetailsModel {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public TopicDetailsModel(int id, int topicId, int studentId, Boolean leader, float scores) {
 		super();
 		this.id = id;
@@ -18,6 +19,7 @@ public class TopicDetailsModel {
 		this.leader = leader;
 		Scores = scores;
 	}
+
 	public int getId() {
 		return id;
 	}

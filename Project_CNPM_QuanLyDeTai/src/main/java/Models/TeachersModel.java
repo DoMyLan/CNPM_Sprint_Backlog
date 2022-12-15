@@ -37,7 +37,9 @@ public class TeachersModel {
 	public void setTeacherName(String teacherName) {
 		this.teacherName = teacherName;
 	}
-	public boolean getGender() {
+
+	public Boolean getGender() {
+
 		return gender;
 	}
 	public void setGender(Boolean gender) {

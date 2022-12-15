@@ -12,7 +12,11 @@ public interface ITeachersDao {
 
 	void delete(int id);
 
-	TeachersModel get(String user);
+
+	TeachersModel getByUser(String user);
+
+	TeachersModel get(int id);
+
 
 	List<TeachersModel> getAll();
 

@@ -53,7 +53,7 @@ public class TopicDetailsDaoImpl extends DBConnection implements ITopicDetailsDa
 
 	@Override
 	public void delete(int id) {
-		String sql = "DELETE FROM topicdetails WHERE topicdetailsId = ?";
+		String sql = "DELETE FROM TopicDetails WHERE id = ?";
 		try {
 			Connection con = super.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -185,4 +185,66 @@ public class TopicDetailsDaoImpl extends DBConnection implements ITopicDetailsDa
 		}
 		return null;
 	}
+
+
+	@Override
+	public List<TopicDetailsModel> getAllByTopicId(int topicId) {
+		String sql = "select * from TopicDetails WHERE topicId=?";
+		List<TopicDetailsModel> topicdetails = new ArrayList<TopicDetailsModel>();
+		try {
+			Connection con = super.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, topicId);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				TopicDetailsModel topicdetail = new TopicDetailsModel();
+
+				topicdetail.setId(rs.getInt("id"));
+				topicdetail.setTopicId(rs.getInt("topicId"));
+				topicdetail.setStudentId(rs.getInt("studentId"));
+				topicdetail.setLeader(rs.getBoolean("leader"));
+				topicdetail.setScores(rs.getFloat("Scores"));
+				topicdetails.add(topicdetail);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return topicdetails;
+	}
+
+
+	@Override
+	public void insertLeader(TopicDetailsModel topicdetail) {
+		// TODO Auto-generated method stub
+		String sql = "INSERT INTO topicDetails(topicId, studentId, leader, scores) VALUES (?,?,1,-1)";
+		try {
+			Connection con = super.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, topicdetail.getTopicId());
+			ps.setInt(2, topicdetail.getStudentId());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	@Override
+	public void insertMenber(TopicDetailsModel topicdetail) {
+		// TODO Auto-generated method stub
+		String sql = "INSERT INTO topicDetails(topicId, studentId, leader, scores) VALUES (?,?,0,-1)";
+		try {
+			Connection con = super.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, topicdetail.getTopicId());
+			ps.setInt(2, topicdetail.getStudentId());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
 }

@@ -37,7 +37,7 @@ public class ProfileController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String user = request.getParameter("user");
 		ITeachersDao iTeachersDao = new TeachersDaoImpl();
-		TeachersModel teachersModel = iTeachersDao.get(user);
+		TeachersModel teachersModel = iTeachersDao.getByUser(user);
 
 		IMajorsDao majorsDao = new MajorsDaoImpl();
 		request.setAttribute("teacher",teachersModel);

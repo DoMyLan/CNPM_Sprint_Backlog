@@ -21,7 +21,7 @@
                      <tr>
                         <td>${STT.index+1}</td>
                         <td>
-                            <a href="${link}/chitietdetai?id=${topic.topicId }" style="color: rgb(68,68,68)!important;">${topic.topicName}</a>
+                            <a href="./topics/details?topicId=${topic.topicId}" style="color: rgb(68,68,68)!important;">${topic.topicName}</a>
                             <!-- <a href="/Home/DanhSachDeTai?id=1" style="color: rgb(68,68,68)!important;"> Tiểu luận chuyên ngành | K14 (2014 - 2019) | Học kỳ 1 (2017-2018)</a> -->
                         </td>
                     </tr>

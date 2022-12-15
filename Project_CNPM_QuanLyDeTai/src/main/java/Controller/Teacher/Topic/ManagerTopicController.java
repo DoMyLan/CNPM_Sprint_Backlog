@@ -1,5 +1,13 @@
 package Controller.Teacher.Topic;
 
+import Dao.IStudentsDao;
+import Dao.ITopicDao;
+import Dao.ITopicDetailsDao;
+import Dao.Impl.StudentsDaoImpl;
+import Dao.Impl.TopicDaoImpl;
+import Dao.Impl.TopicDetailsDaoImpl;
+import Models.TopicModel;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ManagerTopicController
  */
-@WebServlet("/ManagerTopicController")
+@WebServlet("/teacher/topics/details")
 public class ManagerTopicController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,6 +37,19 @@ public class ManagerTopicController extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		
+		String topicX = request.getParameter("topicId");
+		Integer topicId = Integer.parseInt(topicX);
+		ITopicDao topicDao = new TopicDaoImpl();
+		TopicModel topicModel = topicDao.getById(topicId);
+		ITopicDetailsDao topicDetailsDao = new TopicDetailsDaoImpl();
+		IStudentsDao studentsDao = new StudentsDaoImpl();
+
+		request.setAttribute("studentsDao",studentsDao);
+		request.setAttribute("topicModel",topicModel);
+		request.setAttribute("topicDetailsDao",topicDetailsDao);
+		request.getRequestDispatcher("/views/teacher/detail-topic.jsp").forward(request,response);
+
 		
 	}
 

@@ -9,10 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Dao.IMajorsDao;
 import Dao.ITeachersDao;
 import Dao.ITopicDao;
-import Dao.Impl.MajorsDaoImpl;
+
 import Dao.Impl.TeachersDaoImpl;
 import Dao.Impl.TopicDaoImpl;
 import Models.TeachersModel;
@@ -21,7 +20,7 @@ import Models.TopicModel;
 /**
  * Servlet implementation class ManagerTopicController
  */
-@WebServlet("/teacher/topics")
+	@WebServlet("/teacher/topics")
 public class ListTopicController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -43,7 +42,7 @@ public class ListTopicController extends HttpServlet {
 //		String user = request.getParameter("user");
 		String user = "nguyenhuudat2710@gmail.com";
 		ITeachersDao iTeachersDao = new TeachersDaoImpl();
-		TeachersModel teachersModel = iTeachersDao.get(user);
+		TeachersModel teachersModel = iTeachersDao.getByUser(user);
 		ITopicDao iTopicDAO = new TopicDaoImpl();
 		
 		List<TopicModel> topics = iTopicDAO.getAllByTeacher(teachersModel.getTeacherId());

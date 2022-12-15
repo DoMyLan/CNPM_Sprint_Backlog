@@ -39,7 +39,7 @@ public class UpdateProfileController extends HttpServlet {
 		
 		String user = request.getParameter("user");
 		ITeachersDao iTeachersDao = new TeachersDaoImpl();
-		TeachersModel teachersModel = iTeachersDao.get(user);
+		TeachersModel teachersModel = iTeachersDao.getByUser(user);
 		IMajorsDao majorsDao = new MajorsDaoImpl();
 
 		request.setAttribute("teacher",teachersModel);
@@ -62,7 +62,7 @@ public class UpdateProfileController extends HttpServlet {
 		String birth = request.getParameter("birth");
 		ITeachersDao iTeachersDao = new TeachersDaoImpl();
 
-		TeachersModel teachersModel = iTeachersDao.get(email);
+		TeachersModel teachersModel = iTeachersDao.getByUser(email);
 		teachersModel.setBirth(Date.valueOf(birth));
 		teachersModel.setGender(Boolean.valueOf(gender));
 		teachersModel.setTeacherName(teacherName);

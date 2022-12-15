@@ -36,6 +36,7 @@ public class TeachersDaoImpl extends DBConnection implements ITeachersDao{
 	
 	@Override
 	public void edit(TeachersModel teachers) {
+
 		String sql = "UPDATE  teachers SET teacherName=?, gender=?, birth=?, phone=? WHERE email=?";
 		try {
 			Connection con = super.getConnection();
@@ -46,7 +47,7 @@ public class TeachersDaoImpl extends DBConnection implements ITeachersDao{
 			ps.setDate(3, teachers.getBirth());
 			ps.setString(4, teachers.getPhone());
 			ps.setString(5, teachers.getEmail());
-				
+
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,7 +69,7 @@ public class TeachersDaoImpl extends DBConnection implements ITeachersDao{
 	}
 
 	@Override
-	public TeachersModel get(String user) {
+	public TeachersModel getByUser(String user) {
 		String sql = "SELECT * FROM teachers WHERE email = ? ";
 		try {
 			Connection con = super.getConnection();
@@ -121,27 +122,45 @@ public class TeachersDaoImpl extends DBConnection implements ITeachersDao{
 
 	@Override
 	public TeachersModel findById(int id) {
-		String sql = "SELECT * FROM teachers WHERE id = ? ";
+
+
+		String sql = "SELECT * FROM teachers WHERE teacherId = ? ";
+
 		try {
 			Connection con = super.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				TeachersModel teachers = new TeachersModel();
 
-//				teacherser.setteachersId(rs.getInt("teachersId"));
-//				teacherser.setteachersName(rs.getString(id));
-//				teacherser.setteachersId(rs.getInt("teachersId"));
-//				teacherser.setCreatedAt(rs.getDate("createdAt"));
-//				teacherser.setPrice(rs.getBigDecimal("price"));
+				TeachersModel teacher = new TeachersModel();
+
+				teacher.setTeacherId(rs.getInt("teacherId"));
+				teacher.setTeacherName(rs.getString("teacherName"));
+				teacher.setGender(rs.getBoolean("gender"));
+				teacher.setBirth(rs.getDate("birth"));
+				teacher.setEmail(rs.getString("email"));
+				teacher.setPhone(rs.getString("phone"));
+				teacher.setMajorId(rs.getInt("majorId"));
 				
-				return teachers;
+				return teacher;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
+
+
+	@Override
+	public TeachersModel get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
+
+	
 	
 }

@@ -20,4 +20,5 @@ public interface ISignUpDao {
 
 	SignUpModel getLast();
 
+
 }

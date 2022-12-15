@@ -20,7 +20,7 @@ public class RegistrationInstructionsController extends HttpServlet{
 	ISignUpDao signUp = new SignUpDaoImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		SignUpModel sign = signUp.getLast();
 		req.setAttribute("sign",sign);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/views/RegistrationInstructions.jsp");
