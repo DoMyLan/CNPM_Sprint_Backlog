@@ -36,7 +36,7 @@ THÀNH VIÊN:
 - Tạo đợt đăng ký cho sinh viên
 <img width="575" alt="image" src="https://user-images.githubusercontent.com/115056835/209388347-b598d45d-443d-489f-9a68-a9d0fa41da8b.png">
 
-- Thêm tài khoản sinh viên
+- Thêm tài khoản 
 <img width="569" alt="image" src="https://user-images.githubusercontent.com/115056835/209390999-6e95418a-d484-43e5-aa07-7f03625ffe88.png">
 
 - Sinh viên được tạo đợt đăng ký và thực hiện đăng ký
