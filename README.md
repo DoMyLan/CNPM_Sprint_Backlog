@@ -30,6 +30,14 @@ THÀNH VIÊN:
 - Xem danh sách sinh viên đã được cấp tài khoản
 <img width="566" alt="image" src="https://user-images.githubusercontent.com/115056835/209386599-ee8a3391-e5a7-4e34-9884-e72a3b8f1d21.png">
 
+- Xem danh sách các đề tài đã được duyệt
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/115056835/209391731-c09ee4cb-521b-4572-9444-3e1dcb1b1bb9.png">
+
+- Chức năng tìm kiếm
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/115056835/209391928-8a3f8476-c2e4-4428-9831-9559a5cf52d4.png">
+
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/115056835/209392021-5ef63b57-ffce-474b-a34b-a9092ca2bac0.png">
+
 - Giảng viên được tạo đợt đăng ký và thực hiện đăng ký đề tài
 <img width="573" alt="image" src="https://user-images.githubusercontent.com/115056835/209387917-2d4af27a-5be8-409b-9401-7aafa2355102.png">
 
