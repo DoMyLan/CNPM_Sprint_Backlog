@@ -1,5 +1,5 @@
 
-# ĐỀ TÀI: Xây dựng "Website Đăng ký đề tài khoa CNTT" dựa trên nền tảng ASP.NET MVC
+# ĐỀ TÀI: Xây dựng "Website Đăng ký đề tài khoa CNTT"
 ## Thành viên:
 1. Đỗ Thị Mỹ Lan - 20110666
 2. Nguyễn Hữu Đạt - 20110630
