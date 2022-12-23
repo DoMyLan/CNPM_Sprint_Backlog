@@ -35,7 +35,7 @@ THÀNH VIÊN:
 
 - Chức năng tìm kiếm
 <img width="949" alt="image" src="https://user-images.githubusercontent.com/115056835/209391928-8a3f8476-c2e4-4428-9831-9559a5cf52d4.png">
-Kết quả
+---->Kết quả:
 <img width="571" alt="image" src="https://user-images.githubusercontent.com/115056835/209392021-5ef63b57-ffce-474b-a34b-a9092ca2bac0.png">
 
 - Giảng viên được tạo đợt đăng ký và thực hiện đăng ký đề tài
@@ -62,3 +62,7 @@ Kết quả
 - Tạo hội đồng chấm thi
 <img width="572" alt="image" src="https://user-images.githubusercontent.com/115056835/209392447-89588514-813a-45da-b7c1-ee026815676b.png">
 
+- Quyền quản lý tài khoản của admin đối với sinh viên và giảng viên
+<img width="570" alt="image" src="https://user-images.githubusercontent.com/115056835/209392789-b7c828f8-3f29-4a55-bf5d-007a4b0ac0fc.png">
+
+<img width="568" alt="image" src="https://user-images.githubusercontent.com/115056835/209392842-ad00b335-fe50-4d00-8aa8-1c9c0361b575.png">
