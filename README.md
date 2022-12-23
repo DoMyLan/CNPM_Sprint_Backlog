@@ -6,6 +6,6 @@ THÀNH VIÊN:
 
 # ĐỀ TÀI: Xây dựng "Website Đăng ký đề tài khoa CNTT" dựa trên nền tảng ASP.NET MVC
 ## Tổng quan
-Tên đề tài: Thiết kế website quản lý đề tài khoa công nghệ thông tin
-Ngôn ngữ backend: Java JSP/Servlet
-Cơ sở dữ liệu: SQL server
+1. Tên đề tài: Thiết kế website quản lý đề tài khoa công nghệ thông tin
+2. Ngôn ngữ backend: Java JSP/Servlet
+3. Cơ sở dữ liệu: SQL server
