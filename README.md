@@ -14,5 +14,5 @@ THÀNH VIÊN:
 <img width="370" alt="image" src="https://user-images.githubusercontent.com/115056835/209374828-59a34fcd-a4ac-4eda-a3c6-586b50e2c077.png">
 
 ## Tổ chức dự án: Dựa theo mô hình MVC
-![image](https://user-images.githubusercontent.com/115056835/209375186-7a474684-5ab9-4095-a015-56b5fc672fa7.png)
+![image](https://user-images.githubusercontent.com/115056835/209375633-0b141a74-b197-4f14-87a4-574b1d270fea.png)
 
