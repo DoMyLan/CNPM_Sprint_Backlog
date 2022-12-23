@@ -62,7 +62,7 @@ THÀNH VIÊN:
 - Tạo hội đồng chấm thi
 <img width="572" alt="image" src="https://user-images.githubusercontent.com/115056835/209392447-89588514-813a-45da-b7c1-ee026815676b.png">
 
----> Tạo thành công:
+--->Tạo thành công:
 <img width="509" alt="image" src="https://user-images.githubusercontent.com/115056835/209393346-17a0e482-9394-453c-9705-86d3033ac114.png">
 
 - Quyền quản lý tài khoản của admin đối với sinh viên và giảng viên
