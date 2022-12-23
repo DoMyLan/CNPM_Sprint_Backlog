@@ -68,3 +68,10 @@ THÀNH VIÊN:
 <img width="570" alt="image" src="https://user-images.githubusercontent.com/115056835/209392789-b7c828f8-3f29-4a55-bf5d-007a4b0ac0fc.png">
 
 <img width="568" alt="image" src="https://user-images.githubusercontent.com/115056835/209392842-ad00b335-fe50-4d00-8aa8-1c9c0361b575.png">
+
+- Chức năng chấm điểm đề tài
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/115056835/209393700-128d81c3-124b-40a0-b53e-f3681da3e175.png">
+Cho điểm:
+<img width="317" alt="image" src="https://user-images.githubusercontent.com/115056835/209393825-1b2d0591-cfce-4dc4-9507-c5e84a130313.png">
+Điểm sẽ được tính trung bình từ 3 giảng viên trong hội đồng:
+<img width="476" alt="image" src="https://user-images.githubusercontent.com/115056835/209393966-7f14d540-63f8-4849-9a42-495dc4ce7b2b.png">
