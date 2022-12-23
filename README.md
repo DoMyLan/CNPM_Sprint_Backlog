@@ -9,6 +9,7 @@ THÀNH VIÊN:
 1. Tên đề tài: Thiết kế website quản lý đề tài khoa công nghệ thông tin
 2. Ngôn ngữ backend: Java JSP/Servlet
 3. Cơ sở dữ liệu: SQL server
+4. Sever : Apache Tomcat® - Apache Tomcat 9.0.46
 
 ## Lược đồ use-case:
 <img width="370" alt="image" src="https://user-images.githubusercontent.com/115056835/209374828-59a34fcd-a4ac-4eda-a3c6-586b50e2c077.png">
