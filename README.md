@@ -9,3 +9,10 @@ THÀNH VIÊN:
 1. Tên đề tài: Thiết kế website quản lý đề tài khoa công nghệ thông tin
 2. Ngôn ngữ backend: Java JSP/Servlet
 3. Cơ sở dữ liệu: SQL server
+
+## Lược đồ use-case:
+<img width="370" alt="image" src="https://user-images.githubusercontent.com/115056835/209374828-59a34fcd-a4ac-4eda-a3c6-586b50e2c077.png">
+
+## Tổ chức dự án: Dựa theo mô hình MVC
+![image](https://user-images.githubusercontent.com/115056835/209375186-7a474684-5ab9-4095-a015-56b5fc672fa7.png)
+
